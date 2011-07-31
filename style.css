@@ -1,0 +1,54 @@
+
+body {
+	font-family: calibri,tahoma,arial,sans-serif;
+	font-size: 100%;	
+}
+
+.diff_added, .diff_removed, .diff_changed, .diff_normal {
+	display: block;
+	width: auto;
+	padding: 2px;	
+	height: 20px;
+	font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+	overflow: none;
+	white-space: nowrap;
+	font-size: 12px;
+}
+
+.diff_added {
+	background-color: #ddffdd;
+}
+
+.diff_removed {
+	background-color: #ffdddd;
+}
+
+.diff_changed {
+	background-color: #ffffcc;
+}
+
+.divRight {
+	border: 1px solid #cccccc;
+	float: left;
+	width: 640px;
+	overflow: auto;
+	display: block;
+	margin-left: 15px;
+}
+
+.divLeft {
+	border: 1px solid #cccccc;
+	float: left;
+	width: 640px;
+	overflow: auto;
+	display: block;
+}
+
+.diffWrapper {
+	width: 1400px;
+	display: block;
+}
+
+textarea {
+	padding: 3px;
+}
