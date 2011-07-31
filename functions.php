@@ -97,12 +97,12 @@ function parseChange ($change) {
 	*/
 
 	if (is_array($arrMatches)) {
-		if (isset($arrMatches[5]))
+		if (isset($arrMatches[5]) && $arrMatches[5] > 0)
 			$end = $arrMatches[5];
 		else
 			$end = $arrMatches[4];
 
-		if (isset($arrMatches[2]))
+		if (isset($arrMatches[2]) && $arrMatches[2] > 0)
 			$lineEnd = $arrMatches[2];
 		else
 			$lineEnd = $arrMatches[1];

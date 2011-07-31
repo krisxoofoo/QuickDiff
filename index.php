@@ -63,6 +63,12 @@ if (isset($_POST['cmdDiff'])) {
 				case "c":
 					// Changed line
 					$divLeft .= "<div class='diff_changed'>". $line ."</div>\n";
+					if ($dowhat["start"] < $dowhat["end"] && $dowhat["line_start"] == $dowhat["line_end"]) {
+						while ($dowhat["start"] != $dowhat["end"]) {
+                                                        $dowhat["start"]++;
+                                                 	$divLeft .= "<div class='diff_changed'>&nbsp;</div>\n";
+                                                }
+					}
 					break;
 				case "a":
 					// A line was added to the new file
@@ -106,12 +112,17 @@ if (isset($_POST['cmdDiff'])) {
                                 case "c":
                                         // Changed line
                                         $divRight .= "<div class='diff_changed'>". $line ."</div>\n";
+					if ($dowhat["line_start"] < $dowhat["line_end"] && $dowhat["start"] == $dowhat["end"]) {
+                                                while ($dowhat["line_start"] != $dowhat["line_end"]) {
+                                                        $dowhat["line_start"]++;
+                                                        $divLeft .= "<div class='diff_changed'>&nbsp;</div>\n";
+                                                }
+                                        }
                                         break;
                                 case "d":
                                         // A line was removed from the new file
                                         // Add blank lines to indicate this, but first show the normal line
 					$divRight .= "<div class='diff_normal'>". $line ."</div>\n";
-
                                         if ($dowhat["line_start"] == $dowhat["line_end"]) {
                                                 // Just add 1 line
                                                 $divRight .= "<div class='diff_removed'>&nbsp;</div>\n";

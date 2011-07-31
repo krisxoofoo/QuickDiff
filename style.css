@@ -1,18 +1,18 @@
 
 body {
 	font-family: calibri,tahoma,arial,sans-serif;
-	font-size: 100%;	
+	font-size: 12px;
 }
 
 .diff_added, .diff_removed, .diff_changed, .diff_normal {
 	display: block;
 	width: auto;
 	padding: 2px;	
-	height: 20px;
+	height: 16px;
 	font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
 	overflow: none;
 	white-space: nowrap;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 .diff_added {
