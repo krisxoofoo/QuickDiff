@@ -119,7 +119,10 @@ function parseChange ($change) {
 }
 
 function fakeIndenting ($string) {
-	return str_replace("\t", "&nbsp; &nbsp;", $string);
+	$string = str_replace("  ", "&nbsp;", $string);
+	$string = str_replace("\t", "&nbsp; &nbsp;", $string);
+
+	return $string;
 }
 
 ?>
