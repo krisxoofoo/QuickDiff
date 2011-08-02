@@ -1,7 +1,7 @@
 
 body {
 	font-family: calibri,tahoma,arial,sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 }
 
 .diff_added, .diff_removed, .diff_changed, .diff_normal {
@@ -51,4 +51,15 @@ body {
 
 textarea {
 	padding: 3px;
+}
+
+p {
+	display: block;
+	width: 560px;
+	text-align: justify;
+}
+
+p.footer {
+	margin-left: 35px;
+	font-size: 11px;
 }
