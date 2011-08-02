@@ -155,6 +155,20 @@ if (isset($_POST['cmdDiff'])) {
 <HEAD>
 	<TITLE>QuickDiff: See the differences between 2 texts</TITLE>
 	<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24911242-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </HEAD>
 <BODY>
 <h1>QuickDiff: visually see the differences between 2 blocks of text</h1>
