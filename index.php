@@ -5,8 +5,8 @@ require_once("functions.php");
 
 if (isset($_POST['cmdDiff'])) {
 	// Get our POST variables
-	$txtField1 = $_POST['txtField1'];
-	$txtField2 = $_POST['txtField2'];
+	$txtField1 = $_POST['txtField1'] ."\n";
+	$txtField2 = $_POST['txtField2'] ."\n";
 
 	// This is ugly: diff can only see the difference of files
 	// So we save them (temporarily) to files
@@ -38,6 +38,10 @@ if (isset($_POST['cmdDiff'])) {
 	// The rest of the logic is handled below
 	$cmdDiff = "/usr/bin/diff ". $options ." ". $fileField1 ." ". $fileField2 ." | grep -Pv '>|<|---'";
 	exec($cmdDiff, $arrDiff);
+
+	// Remove the temp file
+	unlink($fileField1);
+	unlink($fileField2);
 
 	// We now have an array of changes, filter out only the good parts
 	//echo "Command: ". $cmdDiff ."<br />";
@@ -204,6 +208,10 @@ if ($outputShown) {
 	echo "<br /><br />Changes in diff-format: ". implode(" -- ", $arrDiff); 
 }
 ?>
+<h2>What's this?</h2>
+<p>Input your text in the two textarea's below, and click on submit at the bottom. It will graphically show you the differences between the 2 textareas by highlighting those areas that have changed.</p>
+
+<p>Created by <a href="http://mattiasgeniar.be/">Mattias Geniar</a>. Feel free to contact me via <b>m@ttias.be</b> or via Twitter at <a href="https://twitter.com/#!/mattiasgeniar">@mattiasgeniar</a>.</p>
 
 <h2>Your input</h2>
 <form method="post" name="quickDiff" action="/">
@@ -222,5 +230,17 @@ if ($outputShown) {
 	<br />
 	<input type="submit" name="cmdDiff" value="Check for differences" />
 </form>
+<br />
+<h2>What's this?</h2>
+<p><b>QuickDiff</b> is a wrapper around the popular <b>diff</b> tool on Linux, designed to make viewing the changes between 2 blocks of texts more easy. This allows you to see the difference in text, lists, mails, config files, ...</p>
+
+<p>It was created because I needed an easy way to see the difference between 2 blocks of text, but didn't want to use external services to use it. Since I often use this to <b>diff</b> config files or other "personal" stuff, I feel more confident that I do it on my own system, where I know all data is being deleted. I know it's still plain text, so don't use this for passwords, but at least it's not being stored on a remote system.</p>
+
+<p>I can not guarantee you that I don't save your input (since that would mean I need to give you root access to my server), but I give you my word: <b>your input is not being saved on the server, at all.</b> I save it temporarily to 2 files, to <b>diff</b> them, then delete them aftwards.</p>
+
+<h2>Dude, this stuff doesn't work.</h2>
+<p>It's a Work-In-Progress. It does what I need it to do, but it won't be perfect. If what you're <b>diff'ing</b> isn't top secret, mail me your 2 text-field contents via <b>m@ttias.be</b> so I can debug it further. If you have hints, either mail me or contact me via Twitter at <a href="https://twitter.com/#!/mattiasgeniar">@mattiasgeniar</a>.</p>
+
+<p class="footer">Created by <a href="http://mattiasgeniar.be/">Mattias Geniar</a>. Feel free to contact me via <b>m@ttias.be</b> or via Twitter at <a href="https://twitter.com/#!/mattiasgeniar">@mattiasgeniar</a>.</p>
 </BODY>
 </HTML>
