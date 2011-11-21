@@ -215,8 +215,8 @@ if ($outputShown) {
 
 <h2>Your input</h2>
 <form method="post" name="quickDiff" action="/">
-	<textarea name="txtField1" cols="80" rows="25"><?=isset($_POST['txtField1']) ? $_POST['txtField1'] : ''; ?></textarea>
-	<textarea name="txtField2" cols="80" rows="25"><?=isset($_POST['txtField2']) ? $_POST['txtField2'] : ''; ?></textarea>
+	<textarea class="textarea_left" name="txtField1" cols="80" rows="25"><?=isset($_POST['txtField1']) ? $_POST['txtField1'] : ''; ?></textarea>
+	<textarea class="textarea_right" name="txtField2" cols="80" rows="25"><?=isset($_POST['txtField2']) ? $_POST['txtField2'] : ''; ?></textarea>
 
 	<br /><br />
 	Options:<br />

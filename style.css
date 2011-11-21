@@ -28,7 +28,7 @@ body {
 }
 
 .divRight {
-	border: 1px solid #cccccc;
+	border: 2px solid lightblue;
 	float: left;
 	width: 640px;
 	overflow: auto;
@@ -37,7 +37,7 @@ body {
 }
 
 .divLeft {
-	border: 1px solid #cccccc;
+	border: 2px solid orange;
 	float: left;
 	width: 640px;
 	overflow: auto;
@@ -62,4 +62,12 @@ p {
 p.footer {
 	margin-left: 35px;
 	font-size: 11px;
+}
+
+.textarea_left {
+	border: 2px solid orange;
+}
+
+.textarea_right {
+	border: 2px solid lightblue;
 }
