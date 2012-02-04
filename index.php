@@ -215,18 +215,18 @@ if ($outputShown) {
 
 <h2>Your input</h2>
 <form method="post" name="quickDiff" action="/">
+	<br />
 	<textarea class="textarea_left" name="txtField1" cols="80" rows="25"><?=isset($_POST['txtField1']) ? $_POST['txtField1'] : ''; ?></textarea>
 	<textarea class="textarea_right" name="txtField2" cols="80" rows="25"><?=isset($_POST['txtField2']) ? $_POST['txtField2'] : ''; ?></textarea>
 
 	<br /><br />
 	Options:<br />
-	<input type="checkbox" name="chkWhitespace" id="chkWhitespace" <?=isset($_POST['chkWhitespace']) ? 'checked="true"' : '' ?>> 
+	<input type="checkbox" name="chkWhitespace" id="chkWhitespace" <?=isset($_POST['chkWhitespace']) ? 'checked="true"' : '' ?>>
 		<label for="chkWhitespace">Ignore changes in amount of white space.</label><br />
-	<input type="checkbox" name="chkBlankLines" id="chkBlankLines" <?=isset($_POST['chkBlankLines']) ? 'checked="true"' : '' ?>> 
+	<input type="checkbox" name="chkBlankLines" id="chkBlankLines" <?=isset($_POST['chkBlankLines']) ? 'checked="true"' : '' ?>>
 		<label for="chkBlankLines">Ignore changes that just insert or delete blank lines.</label><br />
 	<input type="checkbox" name="chkCase" id="chkCase" <?=isset($_POST['chkCase']) ? 'checked="true"' : '' ?>> 
 		<label for="chkCase">Ignore changes in case; consider upper- and lower-case letters equivalent.</label><br />
-	
 	<br />
 	<input type="submit" name="cmdDiff" value="Check for differences" />
 </form>
