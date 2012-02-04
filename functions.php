@@ -1,16 +1,25 @@
 <?php
+
+/**
+ * checkLineChangedLeft
+ *
+ * @param mixed $linenumber
+ * @param mixed $arrChanges
+ * @access public
+ * @return void
+ */
 function checkLineChangedLeft ($linenumber, $arrChanges) {
 	/* This function simply returns true or false
 	true: if the linenumber has a matching friend in $arrChanges
 	false: if the linenumber doesn't match a change in $arrChanges
 
 	$arrChanges: an array of diff-style changes
-	 such as: 
-	 Array ( 
-		[0] => 2c2 
-		[1] => 7d6 
-		[2] => 9a9 
-		[3] => 11a12 
+	 such as:
+	 Array (
+		[0] => 2c2
+		[1] => 7d6
+		[2] => 9a9
+		[3] => 11a12
 	 )
 
 	For a good read on understanding these lines, see:
@@ -74,6 +83,13 @@ function checkLineChangedRight ($linenumber, $arrChanges) {
         return false;
 }
 
+/**
+ * parseChange: parse the output of diff
+ *
+ * @param mixed $change
+ * @access public
+ * @return void
+ */
 function parseChange ($change) {
 	/* This function parses the change from a diff. The input is something like:
 	2c2: line 2 has changed
@@ -118,6 +134,13 @@ function parseChange ($change) {
 	}
 }
 
+/**
+ * fakeIndenting: replace spaces and tabs by the HTML character equivalent
+ *
+ * @param mixed $string
+ * @access public
+ * @return void
+ */
 function fakeIndenting ($string) {
 	$string = str_replace("  ", "&nbsp;", $string);
 	$string = str_replace("\t", "&nbsp; &nbsp;", $string);
